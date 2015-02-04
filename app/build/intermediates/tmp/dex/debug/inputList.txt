@@ -1,0 +1,5 @@
+C:\Users\User\AndroidStudioProjects\KnowMath\app\build\intermediates\classes\debug
+C:\Users\User\AndroidStudioProjects\KnowMath\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-aa16b3cf885393ef74ba8407c65bcf20627dd05b.jar
+C:\Users\User\AndroidStudioProjects\KnowMath\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-8405bd4215853f7fd89d602105fac555511a325a.jar
+C:\Users\User\AndroidStudioProjects\KnowMath\app\build\intermediates\pre-dexed\debug\classes-71e2a62864fab55ac22830289e30970d48f87910.jar
+C:\Users\User\AndroidStudioProjects\KnowMath\app\build\intermediates\pre-dexed\debug\classes-4ca0d97e958017c2a78a94e9e4b825448f0ead93.jar

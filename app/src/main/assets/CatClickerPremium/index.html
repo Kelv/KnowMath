@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cat Clicker Premium</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/app.js"></script>
+	
+</head>
+<body onload=init();>
+	<nav id="listViewer">
+		<ul id="listing">
+		</ul>
+	</nav>
+	<div id="viewer">
+		<p id="catName"></p>
+		<p id="count"></p>
+		<img id="im" src="#">
+	</div>
+	<button id='admin' type="button">Admin</button>
+	<div id="addcat">
+		<p>Name:    <input type="text" id="newName" style="width: 100px;"/></p>
+		<p>url:     <input type="text" id="newUrl" style="width: 100px;"/></p>
+		<p>#clicks: <input type="text" id="newClicks" style="width: 100px;"/></p>
+		<button id="cancel" type="button">Cancel</button>
+		<button id="save" type="button">Save</button>
+	</div>
+</body>
+</html>

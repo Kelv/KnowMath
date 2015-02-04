@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>clickCat list</title>
+	<style type="text/css">
+		nav 
+		{
+			width: 10%;
+			padding: 0;
+			margin: 0;
+			background-color: blue;
+			display: inline-block;
+			float: left;
+			margin-right: 50px;
+		}
+		li 
+		{
+			list-style-type: none;
+			height: 30px;
+			margin: 0;
+			padding: auto;
+			text-align: center;
+		}
+		li:hover
+		{
+			cursor: pointer;
+			background-color: grey;
+		}
+		img 
+		{
+			width: 40%;
+			height: auto;
+		}
+		#catsView
+		{
+			width: 20%;
+			float:left;
+		}
+		.active .hidden 
+		{
+			width: 100%;
+			height: 100%;
+		}
+		.active 
+		{
+			display: block;
+		}
+		.hidden 
+		{
+			display: none;
+		}
+
+	</style>
+	<script type="text/javascript">
+		var cats = [['Mike', 0, "images/cat.png"],
+					['Tom', 0, "images/cat2.jpg"],
+					['Mina', 0, "images/cat3.jpg"],
+					['Tarcy', 0, "images/cat4.jpeg"],
+					['Nina',0, "images/cat5.jpg"]];
+
+		var navinit = function()
+		{
+			for(var i = 0; i < cats.length; i++)
+			{
+				var li = document.createElement('li');
+				var text = document.createTextNode(cats[i][0]);
+				li.setAttribute('id',cats[i][0].toLowerCase()+'item');
+				li.appendChild(text);
+
+				list = document.getElementById('listCats');
+
+				list.appendChild(li);
+			}
+		};
+		var catsView = function()
+		{
+			var view = document.getElementById("catsView");
+			for(var i = 0; i < cats.length; i++)
+			{
+				var name = cats[i][0];
+				var counter = cats[i][0]+'counter';
+				var imageUrl = cats[i][2];
+
+				var div = document.createElement('div');
+				var p = document.createElement('p');
+				var image = document.createElement('img');
+				var coun = document.createElement('p');
+
+				div.setAttribute('id',name.toLowerCase());
+				image.setAttribute('src',imageUrl);
+				image.setAttribute('alt',name);
+				coun.setAttribute('id',counter);
+
+				p.appendChild(document.createTextNode(name));
+				coun.appendChild(document.createTextNode("0"));
+
+				div.appendChild(p);
+				div.appendChild(image);
+				div.appendChild(coun);
+
+
+				if(i == 0)	div.setAttribute('class','active');
+				else	div.setAttribute('class','hidden');
+				
+
+				view.appendChild(div);
+			}
+
+		};
+		var regliListener = function()
+		{
+			//This function registers every li listener
+			for(var i = 0; i < cats.length; i++)
+			{
+				var el = document.getElementById(cats[i][0].toLowerCase()+'item');    //Select every list item
+				el.addEventListener('click', (function(pos){
+					return function()
+					{
+						for(var e = 0; e < cats.length; e++)
+						{
+							document.getElementById(cats[e][0].toLowerCase()).setAttribute('class','hidden');  //Clear all cats view
+						}
+						document.getElementById(cats[pos][0].toLowerCase()).setAttribute('class','active');   // Activate the selected cat view
+					}
+				})(i));
+			}
+		};
+		var regClickListener = function()
+		{
+			for(var i = 0; i < cats.length; i++)
+			{
+				d = document.getElementById(cats[i][0].toLowerCase());
+				d.addEventListener('click', (function(pos)
+				{
+					return function()
+					{
+						cats[pos][1] += 1;
+						document.getElementById(cats[pos][0]+'counter').innerHTML = cats[pos][1];
+					}
+				})(i))
+			}
+		};
+
+		var init = function()
+		{
+			navinit();
+			catsView();
+			regliListener();
+			regClickListener();
+		};
+	</script>
+</head>
+<body onload = "init()">
+	<nav>
+		<ul id="listCats">
+		</ul>	
+	</nav>
+	<div id="catsView">
+
+	</div>	
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "sections": [
+        {
+            "name": "Section One";
+            "order": "1",
+            "imageUrl": "",
+            "dataUrl": ""
+        },
+        {
+            "name": "Section Two";
+            "order": "2",
+            "imageUrl": "",
+            "dataUrl": ""
+        },
+        {
+            "name": "Section Three";
+            "order": "3",
+            "imageUrl": "",
+            "dataUrl": ""
+        },
+        {
+            "name": "Section Four";
+            "order": "4",
+            "imageUrl": "",
+            "dataUrl": ""
+        }
+	]
+}
